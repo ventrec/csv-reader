@@ -1,0 +1,20 @@
+{
+  "name": "csv-reader",
+  "version": "0.1.0",
+  "description": "A CSV reader written in javascript using electron",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": {
+    "name": "Runar Jørgensen",
+    "email": "ventrec@ventrec.org",
+    "homepage": "http://www.ventrec.org"
+  },
+  "devDependencies": {
+    "babyparse": "^0.4.6",
+    "electron": "^1.4.1",
+    "vue": "^2.0.3"
+  }
+}

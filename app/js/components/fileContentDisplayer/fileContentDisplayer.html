@@ -1,0 +1,21 @@
+<table class="table-striped">
+    <thead>
+    <tr>
+        <th v-for="item in file.parsed.headerItems" @click="sortBy(item)">
+            <span class="icon icon-down-dir" v-show="displayer.sort.key === item && !displayer.sort.asc"></span>
+            <span class="icon icon-up-dir" v-show="displayer.sort.key === item && displayer.sort.asc"></span>
+            {{ item }}
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="(row, rowIndex) in file.parsed.bodyItems">
+        <td v-for="(column, columnIndex) in row"
+            :class="{ 'activeItem' : isActiveColumn(rowIndex, columnIndex) }"
+            @click="selectColumn(rowIndex, columnIndex)"
+            @contextmenu.prevent="rightClick(rowIndex, columnIndex)">
+            {{ column }}
+        </td>
+    </tr>
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple CSV reader</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/photon.min.css">
+
+    <style>
+        .activeItem {
+            background-color: lightslategray;
+            color: white;
+        }
+
+        tr:active {
+            color: initial !important;
+            background-color: initial !important;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div class="window">
+        <header class="toolbar toolbar-header">
+            <navigation></navigation>
+        </header>
+
+        <div class="window-content">
+            <div class="pane-group">
+                <div class="pane">
+                    <div class="padded-more">
+                        <h1>{{ title }}</h1>
+
+                        <p v-show="!file.path">Open a file in order to see content here...</p>
+
+                        <file-content-displayer v-if="file.path"></file-content-displayer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    require('./js/app.js');
+</script>
+</body>
+</html>
